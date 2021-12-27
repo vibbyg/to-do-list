@@ -1,0 +1,137 @@
+@media screen and (max-width: 1346px){
+    body{
+        background-color: #fff1e6;
+    }
+}
+@media screen and (min-width: 1346px) {
+    body{
+        background-image: url("resources/bg-img_files/bg-image.webp");
+        background-repeat: no-repeat;
+        background-size:cover;
+        width: 100%;
+    }
+    h1{
+        color: lavender;
+    }
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -10%;
+    flex-direction: row;
+    
+}
+.bg-box{
+    background-color: #caf0f8;
+    padding: 25px;
+    padding-top: 0px;
+    border-radius: 10px;
+}
+#title{
+    font-size: 35px;
+    position: relative;
+}
+
+h1 {
+    padding: 10px;
+    font-size: 45px;
+}
+#submitForm {
+    border-radius: 15px;
+    padding: 5px;
+    
+}
+#saveForm {
+    border-radius: 15px;
+    padding: 5px;
+    
+}
+#submitBtn {
+    background-color: #f0efeb;
+    border-radius: 15px;
+    border: none;
+    padding: 5px;
+    box-shadow: 2px 2px grey;
+}
+#submitBtn:active{
+    background-color:#989792;
+}
+#saveForm {
+    border-radius: 15px;
+    padding: 5px;
+    
+}
+#saveBtn {
+    background-color: #f0efeb;
+    border-radius: 15px;
+    border: none;
+    padding: 5px;
+    box-shadow: 2px 2px grey;
+}
+#saveBtn:active{
+    background-color:#989792;
+}
+#cancelBtn {
+    background-color: #f0efeb;
+    border-radius: 15px;
+    border: none;
+    padding: 5px;
+    box-shadow: 2px 2px grey;
+}
+#cancelBtn:active{
+    background-color:#989792;
+}
+button:hover{
+    box-shadow: 5px 5px grey;
+    -webkit-transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+.task-box{
+    display: flex;
+    height: 45px;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.editBtn{
+    margin-right: 5px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 10px;
+    background-color: #99d98c;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight:500;
+}
+.editBtn:active{
+    background-color: #4a6c43;
+}
+
+.deleteBtn{
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 10px;
+    background-color: #ff9393;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight:500;
+}
+.deleteBtn:active{
+    background-color: #e34141;
+}
+#task-complete{
+    margin-right: 5px;
+}
