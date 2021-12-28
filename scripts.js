@@ -3,7 +3,6 @@ const submitFormBtn = document.getElementById("submitBtn");
 const saveEditBtn = document.getElementById("saveBtn");
 const taskArea = document.getElementById("all-task-boxes");
 const submitBoxVal = document.getElementById("submitBox");
-const saveFormText = document.getElementById("saveForm");
 const cancelEditBtn = document.getElementById("cancelBtn");
 let taskArray = [];
 
@@ -16,7 +15,7 @@ submitFormBtn.addEventListener("click", (prevDef)=>{
         taskArray = JSON.parse(tasks);
     }
     taskArray.push(submitFormText.value);
-    submitFormText.value = "";
+    submitFormText.value = "Type your task here!";
     localStorage.setItem("tasks", JSON.stringify(taskArray));
     showTasks();
 });
@@ -51,26 +50,27 @@ function deleteTask(index){
 }
 
 function editTask(index){
+    saveEditBtn.style.display = "inline-block";
+    submitFormBtn.style.display = "none";
+    cancelEditBtn.style.display = "inline-block";
     let tasks = localStorage.getItem("tasks");
     taskArray = JSON.parse(tasks);
-    submitBox.innerHTML = `<label for="saveForm"></label>
-    <input type="text" id="saveForm" name="saveForm" value="${taskArray[index]}">
-    <button id="saveBtn" onclick="saveTask(${index})">Save Task</button>
-    <button id="cancelBtn" onclick='cancelTask'>Cancel</button>`;  
-}
-
-function saveTask(index){
-    let tasks = localStorage.getItem("tasks");
-    taskArray = JSON.parse(tasks);
-    taskArray[index] = saveForm.value;
+    submitFormText.value = taskArray[index];;
+    saveEditBtn.addEventListener("click", () => {
+    taskArray[index] = submitFormText.value;
+    submitFormText.value = "Type your task here!";
     localStorage.setItem("tasks", JSON.stringify(taskArray));
-    submitBoxVal.innerHTML = `<label for="submitForm"></label>
-    <input type="text" id="submitForm" name="submitForm" value="Type your task here!">
-<button id="submitBtn">Add Task</button>`;
-    showTasks();
-}
-function cancelTask(){
-    showTasks();
+    saveEditBtn.style.display = "none";
+    submitFormBtn.style.display = "inline-block";
+    cancelEditBtn.style.display = "none";
+    showTasks(); 
+    });
+    cancelEditBtn.addEventListener("click", ()=>{
+        submitFormText.value = "Type your text here!";
+        saveEditBtn.style.display = "none";
+        submitFormBtn.style.display = "inline-block";
+        cancelEditBtn.style.display = "none";
+    })
 }
 
 
