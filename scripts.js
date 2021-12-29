@@ -15,7 +15,8 @@ submitFormBtn.addEventListener("click", (prevDef)=>{
         taskArray = JSON.parse(tasks);
     }
     taskArray.push(submitFormText.value);
-    submitFormText.value = "Type your task here!";
+    submitFormText.value = "";
+    submitFormText.ariaPlaceholder = "Type your task here!";
     localStorage.setItem("tasks", JSON.stringify(taskArray));
     showTasks();
 });
@@ -58,7 +59,8 @@ function editTask(index){
     submitFormText.value = taskArray[index];;
     saveEditBtn.addEventListener("click", () => {
     taskArray[index] = submitFormText.value;
-    submitFormText.value = "Type your task here!";
+    submitFormText.value = "";
+    submitFormText.ariaPlaceholder = "Type your task here!";
     localStorage.setItem("tasks", JSON.stringify(taskArray));
     saveEditBtn.style.display = "none";
     submitFormBtn.style.display = "inline-block";
